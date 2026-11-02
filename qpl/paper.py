@@ -30,6 +30,8 @@ def run(px: pd.DataFrame, cfg: dict, out_dir: Path) -> list[str]:
     out_dir = Path(out_dir)
     (out_dir / "briefs").mkdir(parents=True, exist_ok=True)
     trades_p, eq_p = out_dir / "trades.csv", out_dir / "equity.csv"
+    if not trades_p.exists():
+        trades_p.write_text(",".join(TRADE_COLS) + "\n")
     assets = list(px.columns)
     fee, slip, band = cfg["fee_rate"], cfg["slippage"], cfg.get("band", config.REBALANCE_BAND)
     init = float(cfg["initial_cash"])

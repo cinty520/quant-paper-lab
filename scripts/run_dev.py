@@ -18,7 +18,11 @@ from qpl.strategies import VARIANTS, target_weights  # noqa: E402
 COLS = ["年化收益", "累计收益", "年化波动", "夏普", "最大回撤", "年换手", "平均仓位"]
 # 除 15 个预注册变体外的额外试验（含失败/作废的），每一项都计入 DSR 的试验数 N
 EXTRA_TRIALS: list[str] = []
-NOTES = ["开发期评估按预注册方案一次跑完，未修改策略、参数或成本设定。"]
+NOTES = [
+    "开发期评估按预注册方案一次跑完，未修改策略、参数或成本设定。",
+    "留出期脚本第一次运行在写 JSON 文件时因 numpy 布尔值无法序列化而报错退出（结论尚未输出）。"
+    "修复序列化后重跑一次；计算逻辑与数据未改，结果是确定性的。",
+]
 
 
 def run_all(px, tgts, start, end, cost):

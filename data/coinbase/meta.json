@@ -19,5 +19,12 @@
     "rows": 98890,
     "first_bar": "2015-07-20 21:00:00+00:00",
     "last_bar": "2026-11-02 13:00:00+00:00"
+  },
+  "ETH-USD_1h": {
+    "source": "https://api.exchange.coinbase.com/products/ETH-USD/candles?granularity=3600",
+    "fetched_at_utc": "2026-11-02T14:39:32Z",
+    "rows": 91481,
+    "first_bar": "2016-05-18 00:00:00+00:00",
+    "last_bar": "2026-11-02 13:00:00+00:00"
   }
 }

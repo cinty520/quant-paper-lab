@@ -38,8 +38,8 @@ def main():
         results[label] = res
     main_res = results["主设定(0.65%)"]
     f = main_res[finalist]
-    beats = {b: f["夏普"] > main_res[b]["夏普"] and f["累计收益"] > main_res[b]["累计收益"] for b in BENCHMARKS}
-    edge = all(beats.values())
+    beats = {b: bool(f["夏普"] > main_res[b]["夏普"] and f["累计收益"] > main_res[b]["累计收益"]) for b in BENCHMARKS}
+    edge = bool(all(beats.values()))
 
     ordered = {f"★ {finalist}（最终候选）": f, **{b: main_res[b] for b in BENCHMARKS},
                **{v: main_res[v] for v in VARIANTS if v != finalist}}
@@ -69,7 +69,7 @@ def main():
     ]
     (config.REPORTS_DIR / "holdout-results.md").write_text("\n".join(lines), encoding="utf-8")
     OUT_JSON.write_text(json.dumps({"finalist": finalist, "beats": beats, "edge": edge, "results": results},
-                                   ensure_ascii=False, indent=2) + "\n")
+                                   ensure_ascii=False, indent=2, default=float) + "\n")
     print("\n".join(lines))
 
 

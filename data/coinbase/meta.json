@@ -1,17 +1,17 @@
 {
   "BTC-USD_1d": {
     "source": "https://api.exchange.coinbase.com/products/BTC-USD/candles?granularity=86400",
-    "fetched_at_utc": "2026-11-25T09:06:36Z",
-    "rows": 4146,
+    "fetched_at_utc": "2026-11-26T08:52:45Z",
+    "rows": 4147,
     "first_bar": "2015-07-20 00:00:00+00:00",
-    "last_bar": "2026-11-24 00:00:00+00:00"
+    "last_bar": "2026-11-25 00:00:00+00:00"
   },
   "ETH-USD_1d": {
     "source": "https://api.exchange.coinbase.com/products/ETH-USD/candles?granularity=86400",
-    "fetched_at_utc": "2026-11-25T09:06:36Z",
-    "rows": 3841,
+    "fetched_at_utc": "2026-11-26T08:52:45Z",
+    "rows": 3842,
     "first_bar": "2016-05-18 00:00:00+00:00",
-    "last_bar": "2026-11-24 00:00:00+00:00"
+    "last_bar": "2026-11-25 00:00:00+00:00"
   },
   "BTC-USD_1h": {
     "source": "https://api.exchange.coinbase.com/products/BTC-USD/candles?granularity=3600",
